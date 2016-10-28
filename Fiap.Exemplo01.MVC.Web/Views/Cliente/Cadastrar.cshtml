@@ -31,6 +31,18 @@
     </div>
 
     <div class="form-group">
+        @Html.LabelFor(c => c.DataNascimento)
+        @Html.TextBoxFor(cli => cli.DataNascimento, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        
+                @Html.LabelFor(c => c.NecessidadesEspeciais)
+                @Html.CheckBoxFor(cli => cli.NecessidadesEspeciais)
+            
+    </div>
+
+    <div class="form-group">
         <input type="submit" value="Salvar" class="btn btn-primary" />
     </div>
 
