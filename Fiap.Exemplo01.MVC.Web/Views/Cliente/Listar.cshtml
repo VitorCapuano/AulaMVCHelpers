@@ -1,1 +1,29 @@
-﻿
+﻿@{
+    ViewBag.Title = "Listar";
+}
+
+<h2>Lista de Produtos</h2>
+
+<p>ASP.NET é o melhor!</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Qtd.</th>
+            <th>Valor</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in @ViewBag.lista)
+        {
+            <tr>
+                <td>@item.Nome</td>
+                <td>@item.Idade</td>
+                <td>@item.Credito</td>
+            </tr>
+
+        }
+
+    </tbody>
+</table>

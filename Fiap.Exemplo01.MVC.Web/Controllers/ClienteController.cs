@@ -22,13 +22,13 @@ namespace Fiap.Exemplo01.MVC.Web.Controllers
         {
             _lista.Add(cliente);
             TempData["msg"] = "Cliente Cadastrado";
-            return View();
+            return RedirectToAction("Cadastrar");
         }
 
         public ActionResult Listar()
         {
-            //ViewBag.lista = _lista; 1º Opção
-            return View(_lista); // 2º Opção
+            ViewBag.lista = _lista; 
+            return View("Listar"); 
         }
     }
 }
