@@ -14,6 +14,12 @@ namespace Fiap.Exemplo01.MVC.Web.Controllers
         [HttpGet]
         public ActionResult Cadastrar()
         {
+            var lista = new List<string>();
+            lista.Add("Solteiro");
+            lista.Add("Casado");
+            lista.Add("Separado");
+
+            ViewBag.estados = new SelectList(lista);
             return View();
         }
 

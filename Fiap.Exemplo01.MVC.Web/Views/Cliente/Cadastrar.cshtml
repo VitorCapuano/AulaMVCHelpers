@@ -1,18 +1,9 @@
 ﻿@model Fiap.Exemplo01.MVC.Web.Models.Cliente
-
-<div class="alert alert-success">
-    @if (TempData["msg"] != null)
-    {
-        @TempData["msg"]
-    }
-
-</div>
+@Helper.Message(TempData["msg"] as string)
 @{
     ViewBag.Title = "Cadastrar";
 }
-
 <h2>Cadastro de Cliente</h2>
-
 @using (Html.BeginForm())
 {
     <div class="form-group">
@@ -36,15 +27,20 @@
     </div>
 
     <div class="form-group">
-        
-                @Html.LabelFor(c => c.NecessidadesEspeciais)
-                @Html.CheckBoxFor(cli => cli.NecessidadesEspeciais)
-            
+
+        @Html.LabelFor(c => c.EstadoCivil)
+        @Html.DropDownListFor(cli => cli.EstadoCivil, ViewBag.estados as SelectList, "Selecione", new { @class = "form-control" })
+
     </div>
 
     <div class="form-group">
-        <input type="submit" value="Salvar" class="btn btn-primary" />
+        @Helper.Submit("Salvar", "btn btn-primary")
     </div>
 
 }
 
+@section scripts
+    
+    {
+        <!--Scripts-->
+    }
